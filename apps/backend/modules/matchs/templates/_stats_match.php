@@ -291,33 +291,33 @@ $size = 450 / ($match->getMaxRound() * 2 + 1);
 
                                 $text = $event->getEventName();
                                 if ($event->getEventName() == "round_start") {
-                                    $text = "Debut du round";
+                                    $text = "Round start";
                                 } elseif ($event->getEventName() == "kill") {
                                     $color = "#F00";
                                     $kill = $event->getKill();
                                     if (!$kill)
                                         continue;
-                                    $text = $kill->getKillerName() . " a tue " . $kill->getKilledName() . " avec " . $kill->getWeapon();
+                                    $text = $kill->getKillerName() . " has killed " . $kill->getKilledName() . " with " . $kill->getWeapon();
                                 } elseif ($event->getEventName() == "round_end") {
-                                    $text = "Fin du round";
+                                    $text = "end of the round";
                                 } elseif ($event->getEventName() == "bomb_planting") {
                                     $color = "#A00";
-                                    $text = "Plantage de la bombe";
+                                    $text = "Plating the bomb";
                                 } elseif ($event->getEventName() == "bomb_defusing") {
                                     $color = "#A00";
-                                    $text = "Defuse de la bombe";
+                                    $text = "Defusing the bomb";
                                 } elseif ($event->getEventName() == "1vx") {
                                     $data = unserialize($event->event_text);
                                     $color = "#00F";
-                                    $text = "Situation de 1v" . $data["situation"];
+                                    $text = "1v" . $data["situation"] . " situation";
                                 } elseif ($event->getEventName() == "bomb_defused") {
-                                    $text = "Bombe defusée";
+                                    $text = "Bomb defused";
                                 } elseif ($event->getEventName() == "1vx_ok") {
-                                    $text = "Situation 1vx réussie";
+                                    $text = "1vx situation successful";
                                 } elseif ($event->getEventName() == "1v1") {
-                                    $text = "Situation 1v1";
+                                    $text = "1v1 situation";
                                 } elseif ($event->getEventName() == "bomb_exploded") {
-                                    $text = "Bombe explosée";
+                                    $text = "Bomb exploded";
                                 }
 
                                 if (count($eventArray) > 0) {
@@ -398,10 +398,10 @@ $size = 450 / ($match->getMaxRound() * 2 + 1);
                                                     <td>
                                                         <?php if (preg_match("!^1v(\d+)$!", $round->best_action_type, $m)): ?>
                                                             <?php $d = unserialize($round->getRaw("best_action_param")); ?>
-                                                            <?php echo $d["playerName"]; ?> <?php echo __("a mis un"); ?> <?php echo $round->best_action_type; ?>
+                                                            <?php echo $d["playerName"]; ?> <?php echo __("won a"); ?> <?php echo $round->best_action_type; ?>
                                                         <?php elseif (preg_match("!^(\d+)kill$!", $round->best_action_type, $m)): ?>
                                                             <?php $d = unserialize($round->getRaw("best_action_param")); ?>
-                                                            <?php echo $d["playerName"]; ?> <?php echo __("did"); ?> <?php echo $m[1]; ?> <?php echo __("Kills"); ?>
+                                                            <?php echo $d["playerName"]; ?> <?php echo __("got"); ?> <?php echo $m[1]; ?> <?php echo __("Kills"); ?>
                                                         <?php endif; ?>
                                                     </td>
                                                 </tr>

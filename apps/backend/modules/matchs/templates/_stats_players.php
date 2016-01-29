@@ -37,7 +37,7 @@
             <th><?php echo __("HeadShot"); ?></th>
             <th><?php echo __("HS Rate"); ?></th>
             <th style="border-left: 1px solid #DDDDDD;"><?php echo __("Defuse"); ?></th>
-            <th><?php echo __("Bombe"); ?></th>
+            <th><?php echo __("Bomb"); ?></th>
             <th><?php echo __("TK"); ?></th>
             <th style="border-left: 1px solid #DDDDDD;"><?php echo __("1v1"); ?></th>
             <th><?php echo __("1v2"); ?></th>
@@ -156,9 +156,9 @@
 
 <h5><i class="icon-info-sign"></i> <?php echo __("Info"); ?></h5>
 <div class="well">
-    <?php echo __("<p>Vous pouvez trier tous les champs du tableau pour obtenir des résultats personallisés.</p>
-			<p>Les colonnes <b>1K</b>, <b>2K</b>, ... représentent le nombre de kill par round effectué. Par exemple, si j'ai 2 dans la colonne 3K, cela veut dire que j'ai fais 2 rounds où j'ai fais 3 kills.
-			<p>La colonne <b>FK</b> signifie <b>First Kill</b>, utile pour voir les personnes qui font les premiers kills</p>
-			<p>Les points clutchs représentent si la personne a réalisé plusieurs \"clutch\", par exemple, gagné un 1v1. Ils sont calculés comme ceci: nombre de 1 v X gagné multiplé par X. Si j'ai fais trois 1v1 et un 1v2, j'aurai donc 5 points. (1v1 x 3 = 3, 1v2 x 1 = 2)</p>
+    <?php echo __("<p>You can sort all fields in the table to get personalized results.</p>
+		<p>The columns <b>1K</b>, <b>2K</b>, etc represents the number of kills per round. For example, if I have 2 in the 3K column, it means that I had 2 rounds where I got 3 kills.</p>
+		<p>The column <b>FK</b> represents <b>First Kill</b>, useful to see who got the first kill that round.</p>
+		<p>The clutch points represents number of \"clutches\" won, for example, won a 1v1. Clutch points are calculated as follows: number of 1 v X won multiplied by X. If I won three 1v1s and one 1v2, I would have 5 points. (1v1 x 3 = 3, 1v2 x 1 = 2)</p>
 "); ?>
 </div>
