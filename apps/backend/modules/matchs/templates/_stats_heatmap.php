@@ -91,7 +91,7 @@
                                 <select id="eventSide">
                                     <option value="all"><?php echo __("Both Sides"); ?></option>
                                     <option value="ct"><?php echo __("Side CT"); ?></option>
-                                    <option value="t"><?php echo __("Side T"); ?>/option>
+                                    <option value="t"><?php echo __("Side T"); ?></option>
                                 </select>
                             </div>
                         </div>
