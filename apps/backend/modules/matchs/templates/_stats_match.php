@@ -375,21 +375,21 @@ $size = 450 / ($match->getMaxRound() * 2 + 1);
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th width="200"><?php echo __("Bomb planted"); ?></th>
+                                                <th width="200"><?php echo __("Bomb planted?"); ?></th>
                                                 <td>
-                                                    <?php echo image_tag("/images/icons/flag_" . ($round->bomb_planted ? "green" : "red") . ".png", array("class" => "needTips", "title" => ($round->bomb_planted ? "oui" : "non"))); ?>
+                                                    <?php echo __($round->bomb_planted ? "Yes " : "No ") . image_tag("/images/icons/flag_" . ($round->bomb_planted ? "green" : "red") . ".png", array("class" => "needTips", "title" => ($round->bomb_planted ? "yes" : "no"))); ?>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th width="200"><?php echo __("Bombe defused"); ?></th>
+                                                <th width="200"><?php echo __("Bomb defused?"); ?></th>
                                                 <td>
-                                                    <?php echo image_tag("/images/icons/flag_" . ($round->bomb_defused ? "green" : "red") . ".png", array("class" => "needTips", "title" => ($round->bomb_defused ? "oui" : "non"))); ?>
+                                                    <?php echo __($round->bomb_defused ? "Yes " : "No ") . image_tag("/images/icons/flag_" . ($round->bomb_defused ? "green" : "red") . ".png", array("class" => "needTips", "title" => ($round->bomb_defused ? "yes" : "no"))); ?>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th width="200"><?php echo __("Bombe exploded"); ?></th>
+                                                <th width="200"><?php echo __("Bomb exploded?"); ?></th>
                                                 <td>
-                                                    <?php echo image_tag("/images/icons/flag_" . ($round->bomb_exploded ? "green" : "red") . ".png", array("class" => "needTips", "title" => ($round->bomb_exploded ? "oui" : "non"))); ?>
+                                                    <?php echo __($round->bomb_exploded ? "Yes " : "No ") . image_tag("/images/icons/flag_" . ($round->bomb_exploded ? "green" : "red") . ".png", array("class" => "needTips", "title" => ($round->bomb_exploded ? "yes" : "no"))); ?>
                                                 </td>
                                             </tr>
                                             <?php if ($round->best_action_type != ""): ?>

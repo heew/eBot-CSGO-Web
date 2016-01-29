@@ -91,35 +91,35 @@
                             <td>
                                 <?php if ($match->getEnable()): ?>
                                     <?php if ($match->getStatus() == Matchs::STATUS_STARTING): ?>
-                                        <?php echo image_tag("/images/icons/flag_blue.png"); ?>
+                                        <?php echo "Pending " . image_tag("/images/icons/flag_blue.png"); ?>
                                     <?php else: ?>
-                                        <?php echo image_tag("/images/icons/flag_green.png"); ?>
+                                        <?php echo "Yes " . image_tag("/images/icons/flag_green.png"); ?>
                                     <?php endif; ?>
                                 <?php else:
                                     ?>
-                                    <?php echo image_tag("/images/icons/flag_red.png"); ?>
+                                    <?php echo "No " . image_tag("/images/icons/flag_red.png"); ?>
                                 <?php endif; ?>
                             </td>
                         </tr>
                         <tr>
                             <th width="200"><?php echo __("Config: Full Score"); ?></th>
-                            <td><?php echo image_tag("/images/icons/flag_" . ($match->getConfigFullScore() ? "green" : "red") . ".png"); ?></td>
+                            <td><?php echo __($match->getConfigFullScore() ? "Yes " . image_tag("/images/icons/flag_green.png") : "No " . image_tag("/images/icons/flag_red.png") ); ?></td>
                         </tr>
                         <tr>
                             <th width="250"><?php echo __("Config: Streamer"); ?></th>
-                            <td><?php echo image_tag("/images/icons/flag_" . ($match->getConfigStreamer() ? "green" : "red") . ".png"); ?></td>
+                            <td><?php echo __($match->getConfigStreamer() ? "Yes " . image_tag("/images/icons/flag_green.png") : "No " . image_tag("/images/icons/flag_red.png") ); ?></td>
                         </tr>
                         <tr>
                             <th width="200"><?php echo __("Config: Overtime"); ?></th>
-                            <td><?php echo image_tag("/images/icons/flag_" . ($match->getConfigOt() ? "green" : "red") . ".png"); ?></td>
+                            <td><?php echo __($match->getConfigOt() ? "Yes " . image_tag("/images/icons/flag_green.png") : "No " . image_tag("/images/icons/flag_red.png") ); ?></td>
                         </tr>
                         <tr>
                             <th width="200"><?php echo __("Config: Knife Round"); ?></th>
-                            <td><?php echo image_tag("/images/icons/flag_" . ($match->getConfigKnifeRound() ? "green" : "red") . ".png"); ?></td>
+                            <td><?php echo __($match->getConfigKnifeRound() ? "Yes " . image_tag("/images/icons/flag_green.png") : "No " . image_tag("/images/icons/flag_red.png") ); ?></td>
                         </tr>
                         <tr>
                             <th width="200"><?php echo __("Config: Switch Auto"); ?></th>
-                            <td><?php echo image_tag("/images/icons/flag_" . ($match->getConfigSwitchAuto() ? "green" : "red") . ".png"); ?></td>
+                            <td><?php echo __($match->getConfigSwitchAuto() ? "Yes " . image_tag("/images/icons/flag_green.png") : "No " . image_tag("/images/icons/flag_red.png") ); ?></td>
                         </tr>
                     </table>
                 </td>
