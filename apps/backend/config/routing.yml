@@ -452,3 +452,12 @@ default_index:
 
 default:
   url:   /:module/:action/*
+
+matchs_demo:
+  url: /matchs/demo/:id
+  class: sfDoctrineRoute
+  options: { model: Maps, type: object}
+  param: { module: matchs, action: demo }
+  requirements:
+    id : \d+
+    sf_method: [get]

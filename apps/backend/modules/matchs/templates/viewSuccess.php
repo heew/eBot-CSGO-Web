@@ -39,6 +39,9 @@
     <?php if (file_exists(sfConfig::get("app_log_match_admin") . "/match-" . $match->getId() . ".html")): ?>
         <li><a href="#logs">Logs</a></li>
     <?php endif; ?>
+    <?php if (sfConfig::get("app_demo_download")): ?>
+        <li><a href="#demos"><?php echo __("Demos"); ?></a></li>
+    <?php endif; ?>
 </ul>
 
 <div class="tab-content" style="padding-bottom: 10px; margin-bottom: 20px;">
@@ -233,7 +236,6 @@
             <?php include_partial("matchs/livemap", array("match" => $match, "ebot_ip" => $ebot_ip, "ebot_port" => $ebot_port)); ?>
         </div>
     <?php endif; ?>
-
     <?php if (file_exists(sfConfig::get("app_log_match") . "/match-" . $match->getId() . ".html")): ?>
         <?php if ($match->getStatus() < Matchs::STATUS_END_MATCH): ?>
             <script>
@@ -275,4 +277,7 @@
             <?php include_partial("matchs/stats_heatmap", array("match" => $match, "class_heatmap" => $class_heatmap)); ?>
         </div>
     <?php endif; ?>
+       <div class="tab-pane" id="demos">
+        <?php include_partial("matchs/stats_demos", array("match" => $match)); ?>
+    </div>
 </div>
