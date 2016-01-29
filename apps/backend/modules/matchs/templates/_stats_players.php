@@ -99,7 +99,13 @@
                         <?php echo $match->getTeamB()->exists() ? $match->getTeamB() : $match->getTeamBName(); ?>
                     <?php endif; ?>
                 </td>
-                <td><?php echo $player->getPseudo(); ?></td>
+		<?php
+			// credits to rannmann, see https://gist.github.com/rannmann/49c1321b3239e00f442c
+			$steamid = $player->getSteamid();
+			$parts = explode(':', $steamid);
+			$steamcommunityurl = "https://steamcommunity.com/profiles/" . (bcadd(bcadd(bcmul($parts[2], '2'), '76561197960265728'), $parts[1]));
+		?>
+                <td><a href="<?php echo $steamcommunityurl; ?>" target="_blank"><?php echo $player->getPseudo(); ?></a></td>
                 <td <?php if ($player->getNbKill() == 0) echo 'class="muted" '; ?> style="border-left: 1px solid #DDDDDD;"><?php echo $player->getNbKill(); ?></td>
                 <td <?php if ($player->getAssist() == 0) echo 'class="muted" '; ?>><?php echo $player->getAssist(); ?></td>
                 <td <?php if ($player->getDeath() == 0) echo 'class="muted" '; ?>><?php echo $player->getDeath(); ?></td>
